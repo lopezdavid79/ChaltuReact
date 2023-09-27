@@ -7,12 +7,12 @@ function Credit() {
     <section>
     <div><i class="fa-solid fa-credit-card fa-2xl"></i></div>
     <h4>Pagá con tarjeta o en efectivo</h4>
-    <p>En Chaltu Bags, tenés cuotas sin interés con tarjeta o efectivo en puntos de
-        pago. ¡Y siempre es seguro!</p>
+    <p>En Chaltu Bags, tenés cuotas sin interés con tarjeta o efectivo en puntos 
+      de pago. ¡Y siempre es seguro!</p>
     </section>
     <section>
     <div><i class="fa-solid fa-gift fa-2xl"></i></div>
-s    <h4>Envío gratis desde $ 7.999</h4>
+    <h4>Envío gratis desde $ 7.999</h4>
     <p>tenés envíos gratis a todo el país , lo recibís en tu casa y sin demoras</p>
     </section>
     <section>
