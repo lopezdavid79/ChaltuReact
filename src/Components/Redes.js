@@ -1,22 +1,23 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faFacebook, faInstagram, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 function Redes() {
   return (
-    <div>
-      <h2>Seguinos:</h2>
-      <div >
+    <div className="d-flex">
+              <h2 className="text-center">Seguinos:</h2>
+
+      <div className="col">
+        
         <a href="https://www.facebook.com/chaltubags/" aria-label="link Facebook" target="_blank" rel="noopener noreferrer">
-          {/* <FontAwesomeIcon icon={faFacebook} className="fa-beat-fade" /> */}
+          <FaFacebook /> Facebook
         </a>
       </div>
-      <div >
+      <div className="col">
         <a href="https://www.instagram.com/p/CPoeChPsyEJ/" aria-label="link Instagram" target="_blank" rel="noopener noreferrer">
-          {/* <FontAwesomeIcon icon={faInstagram} className="fa-beat-fade" /> */}
+            <FaInstagram /> Instagram
         </a>
       </div>
-       </div>
+    </div>
   );
 }
 

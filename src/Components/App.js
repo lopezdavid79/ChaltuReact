@@ -1,30 +1,41 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
 import Encabezado from "./encabezado";
-import NavBar from "./NavBar"   
-import CarruselNovedades  from "./CarruselNovedades";
-import Ofertas from "./Ofertas" 
+import NavBar from "./NavBar";
+import QSomos from "./QSomos"
 import Credit from "./Credit";
 import Redes from "./Redes";
-
 import Info from "./Info";
+import Productos from "./Productos";
+import Contact from "./Contact"
+
+
 function App() {
   return (
-    <div  className="container">
-       <header>
-        <Encabezado/> 
-        <NavBar />
-       </header>
-       <main>
-<CarruselNovedades/>
-<Ofertas />
+    <Router>
+      <div className="container">
+        <header>
+          <a href="#content">Ir al contenido principal</a>
+          <Encabezado />
+          <NavBar />
+        </header>
+        <main id="content">
+          <Routes>
+          <Route path="/" element={<Home/>}/>
+      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/productos" element={<Productos/>}/>
+      <Route path="/qsomos" element={<QSomos/>}/>
 
-       </main>
-       <footer className="container">
-
-<Credit />
-<Redes /> 
-<Info/>
-       </footer>
-    </div>
+          </Routes>
+        </main>
+        <footer className="container">
+          <Credit />
+          <Redes />
+          <Info />
+        </footer>
+      </div>
+    </Router>
   );
 }
 
