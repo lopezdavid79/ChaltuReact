@@ -9,7 +9,7 @@ import Redes from "./Redes";
 import Info from "./Info";
 import Productos from "./Productos";
 import Contact from "./Contact"
-
+import Cart from "./Cart";
 
 function App() {
   return (
@@ -23,11 +23,12 @@ function App() {
         <main id="content">
           <Routes>
           <Route path="/" element={<Home/>}/>
-      <Route path="/contact" element={<Contact/>}/>
+      <Route path="/contacto" element={<Contact/>}/>
       <Route path="/productos" element={<Productos/>}/>
-      <Route path="/qsomos" element={<QSomos/>}/>
+      <Route path="/quienessomos" element={<QSomos/>}/>
 
           </Routes>
+          
         </main>
         <footer className="container">
           <Credit />
