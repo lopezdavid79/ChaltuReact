@@ -9,7 +9,7 @@ import Redes from "./Redes";
 import Info from "./Info";
 import Productos from "./Productos";
 import Contact from "./Contact"
-import Cart from "./Cart";
+// import Cart from "./Cart";
 
 function App() {
   return (
@@ -33,7 +33,8 @@ function App() {
         <footer className="container">
           <Credit />
           <Redes />
-          <Info />
+          <Info
+           />
         </footer>
       </div>
     </Router>
