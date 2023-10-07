@@ -6,7 +6,7 @@ function CarruselNovedades() {
     <Carousel aria-label='carrusel de Novedades'>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block"
           src="../images/riñonera_ala.jpg"
           alt="Riñonera Ala"
         />
@@ -14,14 +14,14 @@ function CarruselNovedades() {
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block"
           src="../images/img_Mochila30lts.jpg"
           alt="Mochila Pampa"
         />
           </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100"
+          className="d-block"
           src="../images/img_Neceser.jpg"
           alt="Neceser Ligera"
         />

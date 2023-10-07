@@ -1,40 +1,38 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './Home';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
 import Encabezado from "./encabezado";
 import NavBar from "./NavBar";
-import QSomos from "./QSomos"
+import QSomos from "./QSomos";
 import Credit from "./Credit";
 import Redes from "./Redes";
 import Info from "./Info";
 import Productos from "./Productos";
-import Contact from "./Contact"
+import Contact from "./Contact";
 // import Cart from "./Cart";
+import "../App.css";
 
 function App() {
   return (
     <Router>
       <div className="container">
         <header>
-          <a href="#content">Ir al contenido principal</a>
+          {/* <a href="#content">Ir al contenido principal</a> */}
           <Encabezado />
           <NavBar />
         </header>
         <main id="content">
           <Routes>
-          <Route path="/" element={<Home/>}/>
-      <Route path="/contacto" element={<Contact/>}/>
-      <Route path="/productos" element={<Productos/>}/>
-      <Route path="/quienessomos" element={<QSomos/>}/>
-
+            <Route path="/" element={<Home />} />
+            <Route path="/contacto" element={<Contact />} />
+            <Route path="/productos" element={<Productos />} />
+            <Route path="/quienessomos" element={<QSomos />} />
           </Routes>
-          
         </main>
         <footer className="container">
           <Credit />
           <Redes />
-          <Info
-           />
+          <Info />
         </footer>
       </div>
     </Router>

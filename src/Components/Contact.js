@@ -23,8 +23,8 @@ function Contact ()  {
 
   return (
     <div className="container mt-5">
-      <h1>Contacto</h1>
-      <form onSubmit={handleSubmit}>
+      <h2>Contacto</h2>
+      <form onSubmit={handleSubmit} className='formulario'>
         <div className="mb-3">
           <label htmlFor="nombre" className="form-label">
             Nombre
