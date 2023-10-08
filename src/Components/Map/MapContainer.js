@@ -1,5 +1,6 @@
 import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import './MapContainer.css'
 
 function MapContainer(props) {
   return (

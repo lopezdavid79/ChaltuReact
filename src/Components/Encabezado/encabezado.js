@@ -4,6 +4,7 @@ import {
   faSearch,
   faHandHoldingDollar,
 } from "@fortawesome/free-solid-svg-icons";
+import './Encabezado.css';
 
 function Encabezado() {
   return (

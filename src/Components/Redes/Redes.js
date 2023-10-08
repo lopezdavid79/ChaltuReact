@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import './Redes.css'
 
 function Redes() {
   const phoneNumber = "3534294632";

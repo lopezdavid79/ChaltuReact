@@ -1,0 +1,29 @@
+
+/* Ofertas*/
+.listado{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.listado article{
+  width: 20rem;
+  height: auto;
+  margin: 2rem;
+  border-radius: 1rem;
+  border: .2rem solid lightgray;
+  text-align: center;
+  background-color: #FFF;
+}
+.listado article img{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+.oferta p{
+  font-size: 2rem;
+  color: var(--black);
+  background-color: #F2F3F4;
+}

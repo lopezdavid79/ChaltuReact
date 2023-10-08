@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
+import './Ofertas.css'
 
 function Ofertas() {
   return (
@@ -13,8 +14,9 @@ function Ofertas() {
               alt="Botinero Teo"
               className="product_img img-fluid"
             />
-            <p className="precio">$6.770</p>
-            <p className="descuento">40% off</p>
+            <p className="precio">Antes: $9.500</p>
+            <p className="precio">$7.600</p>
+            <p className="descuento">20% off</p>
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">
               Botinero Teo
@@ -26,8 +28,9 @@ function Ofertas() {
               alt="Mochila Aguila"
               className="product_img img-fluid"
             />
-            <p className="precio">$25.000</p>
-            <p className="descuento">20% off</p>
+            <p className="precio">Antes $25.000</p>
+            <p className="precio">$21.350</p>
+            <p className="descuento">15% off</p>
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">La Mochila Aguila</h4>
           </article>
@@ -38,7 +41,8 @@ function Ofertas() {
               className="product_img img-fluid"
             />
 
-            <p className="precio">$4.500</p>
+<p className="precio">Antes $6.500</p>
+            <p className="precio">$5.850</p>
             <p className="descuento">10% off</p>
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">La Riñonera Toro</h4>
@@ -49,8 +53,9 @@ function Ofertas() {
               alt="Mochila Athix"
               className="product_img img-fluid"
             />
+            <p className="precio">Antes $26.500</p>
             <p className="precio">$23.200</p>
-            <p className="descuento">5% off</p>
+            <p className="descuento">10% off</p>
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">La Mochila Athix</h4>
           </article>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import "./Contact.css"
 function Contact ()  {
   const [formData, setFormData] = useState({
     nombre: '',

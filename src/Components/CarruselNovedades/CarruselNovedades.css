@@ -1,0 +1,20 @@
+/* carrusel de novedades */
+main{
+  padding:  5rem;
+}
+.carousel.slide{
+width: 50%;
+height: 50%;
+margin: auto;
+}
+.carousel-item{
+  width: 50rem;
+  height: 50rem;
+  border-radius: 1rem;
+}
+.carousel-item img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: .2rem solid var(--primary);
+}

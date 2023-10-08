@@ -1,5 +1,5 @@
-import CarruselNovedades from "./CarruselNovedades";
-import Ofertas from "./Ofertas";
+import CarruselNovedades from "./CarruselNovedades/CarruselNovedades";
+import Ofertas from "./Ofertas/Ofertas";
 function Home(){
     return(
 <div>

@@ -1,0 +1,9 @@
+/* google map */
+.mapa {
+    width: 110rem!important ;
+    height: 50rem !important;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  

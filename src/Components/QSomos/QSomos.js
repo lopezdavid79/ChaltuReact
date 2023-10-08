@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './QSomos.css'
 function QSomos() {
   return (
     <div className="container mt-5 nosotros">
@@ -11,7 +11,7 @@ function QSomos() {
             jóvenes altamente innovadores y creativos que se han dedicado a
             integrarse a la venta por internet con el objetivo de satisfacer al
             cliente al acceso de nuestros productos. Tenemos como objetivo
-            destacar dentro del mercado nacional e internacional en base a un
+            de/stacar dentro del mercado nacional e internacional en base a un
             producto de buena calidad cumpliendo con las necesidades de nuestra
             distinguida clientela, para ello aplicaremos altos estándares de
             calidad.

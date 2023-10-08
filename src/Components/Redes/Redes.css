@@ -1,0 +1,25 @@
+/* redes sociales */
+.redes a{
+    margin: 0 1rem;
+    text-decoration: none !important;
+    color: var(--black);
+    font-size: 3rem;
+    cursor: pointer;
+  
+  }
+  .redes .facebook{
+    color: #3b5998;
+    font-size: 3rem;
+    margin-right: .5rem;
+  }
+  .redes .instagram{
+    color: #e4405f;
+    font-size: 3rem;
+    margin-right: .5rem;
+  }
+  .redes .whatsapp{
+    color: #25d366;
+    font-size: 3rem;
+    margin-right: .5rem;
+  }
+  
