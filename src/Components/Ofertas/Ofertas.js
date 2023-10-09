@@ -55,7 +55,7 @@ function Ofertas() {
             />
             <p className="precio">Antes $26.500</p>
             <p className="precio">$23.200</p>
-            <p className="descuento">10% off</p>
+            
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">La Mochila Athix</h4>
           </article>

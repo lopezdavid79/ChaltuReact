@@ -21,10 +21,14 @@ function NavBar() {
           <Nav.Link as={Link} to="/quienessomos">
             Quiénes Somos
           </Nav.Link>
+          <Nav.Link as={Link} to="/contacto">
+            Contacto
+          </Nav.Link>
           <Nav.Link as={Link} to="/login">
             Inicio de sesión
           </Nav.Link>
-         
+
+           
         </Nav>
       </Navbar.Collapse>
     </Navbar>

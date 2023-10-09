@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTruck } from "@fortawesome/free-solid-svg-icons";
+import ProductForm from "./ProductForm"
 
 function Productos() {
   return (
     <section className="producto">
       <h3>Productos</h3>
+      <ProductForm />
         <div className="row listado">
           <article className="oferta col-3">
             <img
@@ -13,8 +16,8 @@ function Productos() {
               alt="Botinero Teo"
               className="product_img img-fluid"
             />
+<p className="precio">$9.500</p>
 
-            <p className="descuento">40% off</p>
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">
               Botinero Teo
@@ -50,11 +53,12 @@ function Productos() {
               className="product_img img-fluid"
             />
             <p className="precio">$23.200</p>
-            <p className="descuento">5% off</p>
+            
             <FontAwesomeIcon icon={faTruck} className="truck-icon" />
             <h4 className="descripcion">La Mochila Athix</h4>
           </article>
       </div>
+            
     </section>
   );
 }
