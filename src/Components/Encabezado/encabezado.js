@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../logo_chaltu_bags.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSearch,
@@ -12,7 +13,7 @@ function Encabezado() {
       <div className="row logoybarra">
         <div className="col-md-4">
           <a href="../index.html">
-            <img src="../images/logo.jpg" className="logo" alt="logo" />
+            <img src="{logo}" className="logo" alt="logo" />
           </a>
           <h1>CHALTU Bags</h1>
         </div>

@@ -26,6 +26,7 @@ function App() {
         <main id="contenido">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route index element={<Home/>} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/productos" element={<Productos />} />
             <Route path="/quienessomos" element={<QSomos />} />

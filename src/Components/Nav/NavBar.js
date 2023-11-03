@@ -1,22 +1,20 @@
-import React from "react";
-
-import { Navbar, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Importa Link de react-router-dom
+import React, { useState } from "react";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NavBar() {
+  const [adminMenuOpen, setAdminMenuOpen] = useState(false);
+
   return (
     <Navbar bg="dark" expand="lg">
       <Navbar.Brand as={Link} to="/">
-        {/* Inicio */}
+        Inicio
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto nav">
+        <Nav className="mr-auto">
           <Nav.Link as={Link} to="/">
             Inicio
-          </Nav.Link>
-          <Nav.Link as={Link} to="/productos">
-            Productos
           </Nav.Link>
           <Nav.Link as={Link} to="/quienessomos">
             Quiénes Somos
@@ -27,8 +25,17 @@ function NavBar() {
           <Nav.Link as={Link} to="/login">
             Inicio de sesión
           </Nav.Link>
-
-           
+          <NavDropdown
+            title="Admin"
+            id="basic-nav-dropdown"
+            show={adminMenuOpen}
+            onClick={() => setAdminMenuOpen(!adminMenuOpen)}
+          >
+            <NavDropdown.Item as={Link} to="/admin/productos">
+              Productos
+            </NavDropdown.Item>
+            {/* Agrega más opciones de administrador aquí si es necesario */}
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
