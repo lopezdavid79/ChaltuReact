@@ -13,9 +13,12 @@ function NavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/">
-            Inicio
+          
+          <Nav.Link as={Link} to="/products">
+            Productos
           </Nav.Link>
+          
+
           <Nav.Link as={Link} to="/quienessomos">
             Quiénes Somos
           </Nav.Link>
@@ -31,7 +34,7 @@ function NavBar() {
             show={adminMenuOpen}
             onClick={() => setAdminMenuOpen(!adminMenuOpen)}
           >
-            <NavDropdown.Item as={Link} to="/admin/productos">
+            <NavDropdown.Item as={Link} to="/admin">
               Productos
             </NavDropdown.Item>
             {/* Agrega más opciones de administrador aquí si es necesario */}

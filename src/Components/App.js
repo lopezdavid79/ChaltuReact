@@ -11,6 +11,7 @@ import Productos from "./Productos/Productos";
 import Contact from "./Contacto/Contact";
 import LoginPage from "./LoginPage"
 // import Cart from "./Cart";
+import Admin from "./administrador/Admin" 
 import "../App.css";
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route index element={<Home/>} />
             <Route path="/contacto" element={<Contact />} />
-            <Route path="/productos" element={<Productos />} />
+            <Route path="/products" element={<Productos />} />
+            <Route path="/admin" element={<Admin/>} />
             <Route path="/quienessomos" element={<QSomos />} />
             <Route path="/login" element={<LoginPage />} />
           </Routes>
