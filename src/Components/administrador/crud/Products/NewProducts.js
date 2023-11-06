@@ -72,6 +72,7 @@ function New() {
                   type="text"
                   placeholder="Nombre del articulo"
                   autoFocus
+                  required
                   name="articulo"
                   value={articulo}
                   onChange={(event) => {
@@ -90,6 +91,7 @@ function New() {
                 <Form.Control
                   type="text"
                   placeholder="Modelo"
+                  required
                   name="modelo"
                   value={modelo}
                   onChange={(event) => {

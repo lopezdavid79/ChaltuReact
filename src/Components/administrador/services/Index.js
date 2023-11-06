@@ -37,7 +37,7 @@ export async function newProduct(productsData){
 
 }
 
-export async function updateProducts(_id, datosNuevo){
+export async function updateProduct(_id, datosNuevo){
     try{
         const response = await axios({
             url: `${baseUrl}/products/${_id}`,
