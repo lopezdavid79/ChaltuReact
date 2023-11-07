@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { getProducts } from '../Productos/services'; // Corregir la importación
+import { getProducts } from '../Productos/services';
+import { Link } from 'react-router-dom'; // Asegúrate de importar Link desde react-router-dom
 
 function Buscar() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -65,7 +66,9 @@ function Buscar() {
       {isLoading && <p>Realizando búsqueda...</p>}
       <ul>
         {searchResults.map((product) => (
-          <li key={product._id}>{product.articulo}{product.modelo}{product._id} </li>
+          <li key={product._id}>
+            <Link to={`/products/${product    ._id}`}>{product.articulo}{product.modelo}</Link>
+          </li>
         ))}
       </ul>
     </div>
