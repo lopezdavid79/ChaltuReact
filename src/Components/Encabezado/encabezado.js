@@ -6,7 +6,7 @@ import {
   faHandHoldingDollar,
 } from "@fortawesome/free-solid-svg-icons";
 import './Encabezado.css';
-
+import Buscar from "./buscar"
 function Encabezado() {
   return (
     <div className="container">
@@ -16,22 +16,8 @@ function Encabezado() {
             <img src="{logo}" className="logo" alt="logo" />
           </a>
           <h1>CHALTU Bags</h1>
-        </div>
-        <div className="col-md-8">
-          <form action="#" method="GET" role="search" className="form">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Buscar mochilas, Riñoneras y más"
-              />
-              <div className="input-group-append">
-                <button className="btn btn-outline-secondary" type="button">
-                  <FontAwesomeIcon icon={faSearch} />
-                </button>
-              </div>
-            </div>
-          </form>
+          </div>
+<Buscar/>
           <div className="compraencuotas">
             <h3>
               <FontAwesomeIcon icon={faHandHoldingDollar} /> Comprá en cuotas y
@@ -40,7 +26,7 @@ function Encabezado() {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 }
 

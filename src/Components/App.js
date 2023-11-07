@@ -12,6 +12,8 @@ import Contact from "./Contacto/Contact";
 import LoginPage from "./LoginPage"
 // import Cart from "./Cart";
 import Admin from "./administrador/Admin" 
+import ShowProducts  from "./Productos/ShowProduct"
+
 import "../App.css";
 
 function App() {
@@ -30,9 +32,11 @@ function App() {
             <Route index element={<Home/>} />
             <Route path="/contacto" element={<Contact />} />
             <Route path="/products" element={<Productos />} />
+        <Route path="/products/:id" element={<ShowProducts />} />     
             <Route path="/admin" element={<Admin/>} />
             <Route path="/quienessomos" element={<QSomos />} />
             <Route path="/login" element={<LoginPage />} />
+
           </Routes>
         </main>
         <footer className="container">

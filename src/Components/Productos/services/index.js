@@ -14,3 +14,17 @@ export async function getProducts(){
         console.log(e)
     }
 }
+
+// buscar detalle del producto
+export async function productById(productId) {
+    try{
+        const response = await axios({
+            url: `${baseUrl}/products/id/${productId}`,
+            method: "GET",
+        })
+        return response
+    }
+    catch (e) {
+        console.log(e)
+    }
+}

@@ -104,7 +104,7 @@ function Edit() {
                 </Form.Group>
                 <Form.Group controlId="stock">
                   <Form.Label>Stock</Form.Label>
-                  <Form.Control type='number'  defaultValue={datosProducts.stock} name="stock" />
+                  <Form.Control type='number'  defaultValue={datosProducts.stock} name="stock" min="1" />
                 </Form.Group>
                 <Form.Group controlId="imagen">
                   <Form.Label>Imagen</Form.Label>
