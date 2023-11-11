@@ -56,7 +56,7 @@ export const Products = () => {
                                     <Card.Img variant="top" src={product.imagen} style={{ height: '10rem' }} />
                                     <Card.Body>
                                         <Card.Title className='m-2'>
-                                            <Link to={`/products/${product.id}`}>{product.modelo}</Link>
+                                            <Link to={`/products/${product._id}`}>{product.modelo}</Link>
                                         </Card.Title>
                                         <Card.Text>
                                             {product.precio}

@@ -16,10 +16,10 @@ export async function getProducts(){
 }
 
 // buscar detalle del producto
-export async function productById(productId) {
+export async function getProductById(productId) {
     try{
         const response = await axios({
-            url: `${baseUrl}/products/id/${productId}`,
+            url: `${baseUrl}/products/${productId}`,
             method: "GET",
         })
         return response
