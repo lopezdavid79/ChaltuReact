@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import MediosPago from './MediosPagos';
+import MediosEnvio from "./MediosEnvio"
+import CarritoDeCompras from "./CarritoDeCompras"
 import { getProductById } from './services/index';
 
 import Container from 'react-bootstrap/Container';
@@ -8,10 +10,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useParams, Link } from 'react-router-dom';
 
-export const ShowProduct = () => {
+const ShowProduct = () => {
   const [product, setProduct] = useState(null);
   const [cuotaValue, setCuotaValue] = useState(null);
+  const [carrito, setCarrito] = useState([]);
   const [showMediosPago, setShowMediosPago] = useState(false);
+  const [showMediosEnvio, setShowMediosEnvio] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   const { id } = useParams();
@@ -37,17 +41,65 @@ export const ShowProduct = () => {
     setQuantity(parseInt(event.target.value, 10));
   };
 
-  const addToCart = () => {
-    console.log(`Se agregarán ${quantity} ${product.articulo} al carrito`);
-  };
-
   const toggleMediosPago = () => {
     setShowMediosPago(!showMediosPago);
+  };
+
+  const toggleMediosEnvio = () => {
+    setShowMediosEnvio(!showMediosEnvio);
   };
 
   if (!product) {
     return <div className='text-center'>Cargando contenido...</div>;
   }
+
+  const addToCart = () => {
+    const itemExistente = carrito.find((item) => item.id === product.id);
+
+    if (itemExistente) {
+      // Si el producto ya está en el carrito, actualiza la cantidad
+      setCarrito((prevCarrito) =>
+        prevCarrito.map((item) =>
+          item.id === product.id ? { ...item, cantidad: item.cantidad + quantity } : item
+        )
+      );
+    } else {
+      // Si el producto no está en el carrito, agrégalo con la cantidad especificada
+      setCarrito((prevCarrito) => [
+        ...prevCarrito,
+        { ...product, cantidad: quantity },
+      ]);
+    }
+  };
+
+// ... (resto del código en ShowProduct)
+
+const eliminarDelCarrito = (productId) => {
+  setCarrito((prevCarrito) => prevCarrito.filter((item) => item.id !== productId));
+};
+
+const actualizarCantidad = (productId, newQuantity) => {
+  if (newQuantity <= 0) {
+    // Si la nueva cantidad es menor o igual a cero, elimina el producto del carrito
+    eliminarDelCarrito(productId);
+  } else {
+    // Actualiza la cantidad del producto en el carrito
+    setCarrito((prevCarrito) =>
+      prevCarrito.map((item) =>
+        item.id === productId ? { ...item, cantidad: newQuantity } : item
+      )
+    );
+  }
+};
+
+// ... (resto del código en ShowProduct)
+
+// En la llamada a CarritoDeCompras, pasa las funciones como props
+<CarritoDeCompras
+  carrito={carrito}
+  onEliminarDelCarrito={eliminarDelCarrito}
+  onActualizarCantidad={actualizarCantidad}
+/>
 
   return (
     <Container>
@@ -55,7 +107,7 @@ export const ShowProduct = () => {
         <Card.Body>
           <Card.Title>
             <h2>
-            {product.articulo} {product.modelo}
+              {product.articulo} {product.modelo}
             </h2>
           </Card.Title>
 
@@ -75,18 +127,27 @@ export const ShowProduct = () => {
             <Button variant="primary" onClick={addToCart}>
               Agregar al carrito
             </Button>
+
             <p>
               <Link to="#" onClick={toggleMediosPago}>
                 {showMediosPago ? 'Ocultar Medios de Pago' : 'Mostrar Medios de Pago'}
               </Link>
             </p>
             <p>
-              <Link to="/medios_de_envio">Medios de Envío</Link>
+              <Link to="#" onClick={toggleMediosEnvio}>
+                {showMediosEnvio ? 'Ocultar Medios de Envío' : 'Mostrar Medios de Envío'}
+              </Link>
             </p>
           </Card.Text>
         </Card.Body>
       </Card>
       {showMediosPago && <MediosPago />}
+      {showMediosEnvio && <MediosEnvio />}
+      <CarritoDeCompras
+        carrito={carrito}
+        onEliminarDelCarrito={eliminarDelCarrito}
+        onActualizarCantidad={actualizarCantidad}
+      />
     </Container>
   );
 };

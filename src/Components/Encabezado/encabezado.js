@@ -1,5 +1,5 @@
 import React from "react";
-import logo1 from "../../logo.jpg";
+import logo1 from "../../assets/logo.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 faHandHoldingDollar,
