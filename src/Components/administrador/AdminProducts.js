@@ -51,7 +51,7 @@ export const AdminProducts = () => {
             <ListGroup.Item>
               <div>
                 <div>Imagen</div>
-                <Image src={process.env.PUBLIC_URL + imagen} alt="" />
+                <Image className='ImagenProducts' src={process.env.PUBLIC_URL + imagen} alt="" />
               </div>
             </ListGroup.Item>
 

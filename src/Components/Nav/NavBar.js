@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 function NavBar() {
   const [adminMenuOpen, setAdminMenuOpen] = useState(false);
 
   return (
-    <Navbar bg="dark" expand="lg">
+    
+    <Navbar bg="dark" expand="lg" className="nav">
       <Navbar.Brand as={Link} to="/">
         Inicio
       </Navbar.Brand>

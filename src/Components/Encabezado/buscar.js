@@ -67,7 +67,7 @@ function Buscar() {
       <ul className="list-unstyled">
         {searchResults.map((product) => (
           <li key={product._id}>
-            <Link to={`/products/${product    ._id}`}>{product.articulo}{product.modelo}</Link>
+            <Link to={`/products/${product._id}`}>{product.articulo}{product.modelo}</Link>
           </li>
         ))}
       </ul>

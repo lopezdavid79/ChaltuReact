@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import MediosPago from './MediosPagos';
 import { getProductById } from './services/index';
-import { useParams } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export const ShowProduct = () => {
   const [product, setProduct] = useState(null);
   const [cuotaValue, setCuotaValue] = useState(null);
-  const [quantity, setQuantity] = useState(1); // Nuevo estado para la cantidad de productos
+  const [showMediosPago, setShowMediosPago] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -35,8 +38,11 @@ export const ShowProduct = () => {
   };
 
   const addToCart = () => {
-    // Lógica para agregar al carrito, puedes implementarla según tus necesidades
     console.log(`Se agregarán ${quantity} ${product.articulo} al carrito`);
+  };
+
+  const toggleMediosPago = () => {
+    setShowMediosPago(!showMediosPago);
   };
 
   if (!product) {
@@ -48,12 +54,12 @@ export const ShowProduct = () => {
       <Card>
         <Card.Body>
           <Card.Title>
-            {product.articulo}
-            {product.modelo}
-            </Card.Title>
-          
-          <Card.Text>
+            <h2>
+            {product.articulo} {product.modelo}
+            </h2>
+          </Card.Title>
 
+          <Card.Text>
             <p>Precio $ {product.precio}</p>
             <p>3 cuotas sin interés de $ {cuotaValue}</p>
             <p>Descripción: {product.descripcion}</p>
@@ -70,16 +76,17 @@ export const ShowProduct = () => {
               Agregar al carrito
             </Button>
             <p>
-            
-              <Link to="/metodo-pago">  medios de pago</Link>
+              <Link to="#" onClick={toggleMediosPago}>
+                {showMediosPago ? 'Ocultar Medios de Pago' : 'Mostrar Medios de Pago'}
+              </Link>
             </p>
             <p>
-              <Link to="/medios_de_envio">  medios de ENVÍO</Link>
+              <Link to="/medios_de_envio">Medios de Envío</Link>
             </p>
-            
           </Card.Text>
         </Card.Body>
       </Card>
+      {showMediosPago && <MediosPago />}
     </Container>
   );
 };

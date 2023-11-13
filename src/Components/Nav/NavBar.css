@@ -4,7 +4,7 @@
   font-size: 2rem;
 }
 .nav .nav-link{
-  color: white;
+  color: white !important;
   font-weight: bold;
   margin: 0 1rem;
 }
