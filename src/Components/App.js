@@ -10,7 +10,7 @@ import Redes from "./Redes/Redes";
 import Productos from "./Productos/Productos";
 import Contact from "./Contacto/Contact";
 import LoginPage from "./LoginPage"
-// import Cart from "./Cart";
+
 import Admin from "./administrador/Admin" 
 import ShowProducts  from "./Productos/ShowProduct"
 
@@ -21,7 +21,7 @@ function App() {
     <Router>
       <div className="container">
         <header>
-        <a href="#contenido" class="sr-only sr-only-focusable">Saltar al contenido principal</a>
+        <a href="#contenido" className="sr-only sr-only-focusable">Saltar al contenido principal</a>
 
           <Encabezado />
           <NavBar />

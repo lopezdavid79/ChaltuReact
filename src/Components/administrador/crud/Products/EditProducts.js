@@ -8,15 +8,25 @@ function Edit() {
   const [products, setProducts] = useState([]);
   const [productSel, setProductSel] = useState("");
   const [datosProducts, setDatosProducts] = useState({});
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     async function cargaProducts() {
-      const response = await getProducts();
+      try {
+        const response = await getProducts();
 
-      if (response.status === 200) {
-        setProducts(response.data.products);
+        if (response.status === 200) {
+          setProducts(response.data.products);
+          console.log(response.data.products)
+        }
+      } catch (error) {
+        console.error("Error al cargar productos:", error);
       }
     }
+
     cargaProducts();
   }, []);
 
@@ -26,38 +36,35 @@ function Edit() {
     setDatosProducts(selectedProduct);
   };
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const inputFileRef = useRef();
   const formRef = useRef();
 
-  const handleSubmit = () => {
-    const newArticulo = formRef.current.articulo.value;
-    const newModelo = formRef.current.modelo.value;
-    const newDescripcion = formRef.current.descripcion.value;
-    const newPrecio = formRef.current.precio.value;
-    const newStock = formRef.current.stock.value;
-    const newImagen = inputFileRef.current.files[0];
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setDatosProducts({ ...datosProducts, imagen: file });
+  };
 
-    const datosNuevos = {
-      articulo: newArticulo,
-      modelo: newModelo,
-      descripcion: newDescripcion,
-      precio: newPrecio,
-      stock: newStock,
-      imagen: newImagen,
-    };
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Evitar la recarga de la página al enviar el formulario
+
+    const formData = new FormData();
+    formData.append("imagen", datosProducts.imagen);
+    formData.append("articulo", formRef.current.articulo.value);
+    formData.append("modelo", formRef.current.modelo.value);
+    formData.append("descripcion", formRef.current.descripcion.value);
+    formData.append("precio", formRef.current.precio.value);
+    formData.append("stock", formRef.current.stock.value);
 
     const confirmActualizar = window.confirm(`¿Estás seguro que quieres actualizar el producto?`);
 
     if (confirmActualizar) {
-      updateProduct(productSel, datosNuevos)
-        .then((response) => {
-          handleClose();
-          window.location.reload();
-        });
+      try {
+        await updateProduct(productSel, formData);
+        handleClose();
+        // Actualizar el estado localmente si es necesario
+      } catch (error) {
+        console.error("Error al actualizar el producto:", error);
+      }
     }
   };
 
@@ -72,7 +79,7 @@ function Edit() {
         </Modal.Header>
 
         <Modal.Body>
-          <Form ref={formRef}>
+          <Form ref={formRef} onSubmit={handleSubmit}>
             <Form.Group controlId="product">
               <Form.Label>Seleccionar producto</Form.Label>
               <Form.Select value={productSel} onChange={handleSelProducts}>
@@ -86,10 +93,15 @@ function Edit() {
             </Form.Group>
             {productSel && (
               <div>
+                
+
+
+
                 <Form.Group controlId="articulo">
                   <Form.Label>Articulo</Form.Label>
-                  <Form.Control defaultValue={datosProducts.articulo} name="articulo" />
+                  <Form.Control value={datosProducts.articulo} name="articulo" onChange={() => {}} />
                 </Form.Group>
+                {/* Resto de los campos */}
                 <Form.Group controlId="modelo">
                   <Form.Label>Modelo</Form.Label>
                   <Form.Control defaultValue={datosProducts.modelo} name="modelo" />
@@ -106,19 +118,21 @@ function Edit() {
                   <Form.Label>Stock</Form.Label>
                   <Form.Control type='number'  defaultValue={datosProducts.stock} name="stock" min="1" />
                 </Form.Group>
+
+
                 <Form.Group controlId="imagen">
                   <Form.Label>Imagen</Form.Label>
-                  <Form.Control type="file" ref={inputFileRef} />
+                  <Form.Control type="file" ref={inputFileRef} onChange={handleFileChange} />
                 </Form.Group>
+                <Button variant="success" type="submit">
+                  Actualizar producto
+                </Button>
               </div>
             )}
           </Form>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="success" type="submit" onClick={handleSubmit}>
-            Actualizar producto
-          </Button>
           <Button variant="danger" onClick={handleClose}>
             Cancelar
           </Button>

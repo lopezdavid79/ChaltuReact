@@ -53,6 +53,7 @@ function Buscar() {
             type="text"
             className="form-control"
             placeholder="Buscar productos por artículo"
+            name="buscar"
             value={searchTerm}
             onChange={handleSearchChange}
           />
