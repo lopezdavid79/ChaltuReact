@@ -6,7 +6,7 @@ import NavBar from "./Nav/NavBar";
 import QSomos from "./QSomos/QSomos";
 import Credit from "./Credit";
 import Redes from "./Redes/Redes";
-// import Info from "./Info";
+ import Info from "./Info";
 import Productos from "./Productos/Productos";
 import Contact from "./Contacto/Contact";
 import LoginPage from "./LoginPage"
@@ -42,7 +42,7 @@ function App() {
         <footer className="container">
           <Credit />
           <Redes />
-          {/* <Info /> */}
+          <Info />
         </footer>
       </div>
     </Router>

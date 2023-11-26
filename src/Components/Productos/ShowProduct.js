@@ -1,3 +1,4 @@
+import CommentList from "../comentarios/CommentList"
 import React, { useState, useEffect } from 'react';
 import MediosPago from './MediosPagos';
 import MediosEnvio from "./MediosEnvio"
@@ -148,7 +149,10 @@ const actualizarCantidad = (productId, newQuantity) => {
         onEliminarDelCarrito={eliminarDelCarrito}
         onActualizarCantidad={actualizarCantidad}
       />
+      < CommentList />
+      
     </Container>
+    
   );
 };
 

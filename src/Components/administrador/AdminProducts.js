@@ -10,6 +10,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 export const AdminProducts = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     async function cargaProducts() {
@@ -28,7 +29,8 @@ export const AdminProducts = () => {
       }
     }
     cargaProducts();
-  }, []);
+  }, []); 
+  
 
   return (
     <Container>

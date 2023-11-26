@@ -20,6 +20,6 @@ function MapContainer(props) {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyC-h2BKXgWmyaI7VY6PsIopucFQpgUF2EU',
+  apiKey: 'AIzaSyB2a_MGLzGLJo8ZlsczA7zVgJEhNtfZxQY',
   language:"es", // Cambia "es" al código de idioma deseado
 })(MapContainer);
